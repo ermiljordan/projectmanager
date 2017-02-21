@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import ProjectItem from './ProjectItem';
+import TodoItem from './TodoItem';
 
-class Todo extends Component {
-  deleteProject(id){
-    this.props.onDelete(id);
-  }
-  
+class Todos extends Component {
   render() {
-    let TodoItems;
+    let todoItems;
     if(this.props.todos){
-    TodoItem = this.props.projects.map(todo => {
+      todoItems = this.props.projects.map(todo => {
       return (
-    <ProjectItem onDelete={this.deleteProject.bind(this)}key={todo.title} todo={todo} />
+        <TodoItem key={todo.title} todo={todo} />
       );
     });
   }
     return (
       <div className="Todo">
-        <h3>Latest Project</h3>
+        <h3>Todo List</h3>
         {todoItems}
       </div>
     );
