@@ -19,7 +19,7 @@ class App extends Component {
       url: 'https://jsonplaceholder.typicode.com/todos',
       dataType:'json',
       cache: false,
-      succes: function(data){
+      success: function(data){
         this.setState({todos: data}, function(){
           console.log(this.state);
         });
